@@ -1,0 +1,17 @@
+<table class="ui very basic collapsing celled table">  
+    <thead>
+        <tr><th><%= @book.title %></th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="content"> 
+                    <%= @book.description %>
+                </div>
+            </td>
+            <td> <%= link_to 'View File', @book.image %> </td>
+        </tr>    
+    </tbody>
+</table>
+
+<%= link_to 'Back', books_path %>
