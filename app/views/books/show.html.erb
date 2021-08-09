@@ -10,6 +10,7 @@
                 </div>
             </td>
             <td> <%= link_to 'View File', @book.image %> </td>
+            <td> <%= link_to 'Delete File', @book, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
         </tr>    
     </tbody>
 </table>

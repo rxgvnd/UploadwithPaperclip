@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-    before_action :set_book, only: [:show, :download]
+    before_action :set_book, only: [:show, :destroy]
   
     def index
       @books = Book.order('created_at DESC')
@@ -21,6 +21,14 @@ class BooksController < ApplicationController
       end
     end
   
+    def destroy
+      @book.destroy
+      respond_to do |format|
+        format.html { redirect_to books_url, notice: "Drop was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    end
+
     private
   
     def book_params
